@@ -2,7 +2,7 @@
     <Header ></Header>
     <div class="flex">
         <Sidebar></Sidebar>
-        <main>
+        <main class="flex w-full justify-center	">
           <router-view />
         </main>
     </div> 
