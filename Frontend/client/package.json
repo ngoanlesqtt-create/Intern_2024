@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
+    "@vee-validate/nuxt": "^4.14.3",
     "@vueuse/head": "^2.0.0",
     "element-plus": "^2.8.6",
     "nuxt": "^3.13.2",
     "pinia": "^2.2.4",
+    "vee-validate": "^4.14.3",
     "vue": "latest",
     "vue-router": "latest"
   },

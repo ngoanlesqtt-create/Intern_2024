@@ -1,44 +1,33 @@
 <template>
-  <div class="flex flex-col items-center shadow-2xl  h-[300px]">
+  <div class="flex flex-col items-center shadow-2xl h-[300px]">
     <h1 class="font-bold text-3xl text-center">ĐĂNG KÝ</h1>
-    <div class="flex flex-col items-center h-[250px] justify-around w-1/2">
-      <el-input
-        class="bg-[#ededed] w-1/2"
-        type="text"
-        placeholder="Nhập tên đăng nhập"
-        v-model="userName"
-      />
-      <el-input
-        class="bg-[#ededed] w-1/2"
-        type="password"
-        placeholder="Nhập mật khẩu"
-      />
-      <el-input
-        class="bg-[#ededed] w-1/2"
-        type="text"
-        placeholder="Nhập mật email"
-      />
-      <el-input
-        class="bg-[#ededed] w-1/2"
-        type="number"
-        placeholder="Nhập số điện thoại"
-      />
-      <el-input
-        class="bg-[#ededed] w-1/2"
-        type="text"
-        placeholder="Nhập mật địa chỉ"
-      />
-      <div>
-        <el-button>Đăng ký</el-button>
-      </div>
-    </div>
+    <Form
+      @submit="onSubmit"
+      class="flex flex-col items-center h-[250px] justify-around w-1/2"
+    >
+      <Username />
+      <Password />
+      <Email />
+      <PhoneNumber />
+      <Address />
+
+      <button>Đăng ký</button>
+    </Form>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
+import { Form } from "vee-validate";
+import Username from "~/components/Inputs/Username";
+import Password from "~/components/Inputs/Password";
+import Email from "~/components/Inputs/Email";
+import PhoneNumber from "~/components/Inputs/PhoneNumber";
+import Address from "~/components/Inputs/Address";
 
-const userName=ref('')
+
+
+
 </script>
 
 <style scoped></style>

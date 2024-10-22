@@ -17,7 +17,6 @@ watch(
   () => store.data,
   (newValue) => {
     localData.value = newValue;
-    console.log(localData.value);
   }
 );
 

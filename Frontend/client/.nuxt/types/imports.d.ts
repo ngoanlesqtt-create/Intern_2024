@@ -401,10 +401,24 @@ declare global {
   const useCssVars: typeof import('../../node_modules/vue')['useCssVars']
   const useError: typeof import('../../node_modules/nuxt/dist/app/composables/error')['useError']
   const useFetch: typeof import('../../node_modules/nuxt/dist/app/composables/fetch')['useFetch']
+  const useField: typeof import('../../node_modules/vee-validate')['useField']
+  const useFieldArray: typeof import('../../node_modules/vee-validate')['useFieldArray']
+  const useFieldError: typeof import('../../node_modules/vee-validate')['useFieldError']
+  const useFieldValue: typeof import('../../node_modules/vee-validate')['useFieldValue']
+  const useForm: typeof import('../../node_modules/vee-validate')['useForm']
+  const useFormErrors: typeof import('../../node_modules/vee-validate')['useFormErrors']
+  const useFormValues: typeof import('../../node_modules/vee-validate')['useFormValues']
   const useHead: typeof import('../../node_modules/@unhead/vue')['useHead']
   const useHeadSafe: typeof import('../../node_modules/@unhead/vue')['useHeadSafe']
   const useHydration: typeof import('../../node_modules/nuxt/dist/app/composables/hydrate')['useHydration']
   const useId: typeof import('../../node_modules/vue')['useId']
+  const useIsFieldDirty: typeof import('../../node_modules/vee-validate')['useIsFieldDirty']
+  const useIsFieldTouched: typeof import('../../node_modules/vee-validate')['useIsFieldTouched']
+  const useIsFieldValid: typeof import('../../node_modules/vee-validate')['useIsFieldValid']
+  const useIsFormDirty: typeof import('../../node_modules/vee-validate')['useIsFormDirty']
+  const useIsFormTouched: typeof import('../../node_modules/vee-validate')['useIsFormTouched']
+  const useIsFormValid: typeof import('../../node_modules/vee-validate')['useIsFormValid']
+  const useIsSubmitting: typeof import('../../node_modules/vee-validate')['useIsSubmitting']
   const useLazyAsyncData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useLazyAsyncData']
   const useLazyFetch: typeof import('../../node_modules/nuxt/dist/app/composables/fetch')['useLazyFetch']
   const useLink: typeof import('../../node_modules/vue-router')['useLink']
@@ -419,6 +433,7 @@ declare global {
   const useRequestHeader: typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestHeader']
   const useRequestHeaders: typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestHeaders']
   const useRequestURL: typeof import('../../node_modules/nuxt/dist/app/composables/url')['useRequestURL']
+  const useResetForm: typeof import('../../node_modules/vee-validate')['useResetForm']
   const useRoute: typeof import('../../node_modules/nuxt/dist/app/composables/router')['useRoute']
   const useRouteAnnouncer: typeof import('../../node_modules/nuxt/dist/app/composables/route-announcer')['useRouteAnnouncer']
   const useRouter: typeof import('../../node_modules/nuxt/dist/app/composables/router')['useRouter']
@@ -454,8 +469,12 @@ declare global {
   const useShadowRoot: typeof import('../../node_modules/vue')['useShadowRoot']
   const useSlots: typeof import('../../node_modules/vue')['useSlots']
   const useState: typeof import('../../node_modules/nuxt/dist/app/composables/state')['useState']
+  const useSubmitCount: typeof import('../../node_modules/vee-validate')['useSubmitCount']
+  const useSubmitForm: typeof import('../../node_modules/vee-validate')['useSubmitForm']
   const useTemplateRef: typeof import('../../node_modules/vue')['useTemplateRef']
   const useTransitionState: typeof import('../../node_modules/vue')['useTransitionState']
+  const useValidateField: typeof import('../../node_modules/vee-validate')['useValidateField']
+  const useValidateForm: typeof import('../../node_modules/vee-validate')['useValidateForm']
   const watch: typeof import('../../node_modules/vue')['watch']
   const watchEffect: typeof import('../../node_modules/vue')['watchEffect']
   const watchPostEffect: typeof import('../../node_modules/vue')['watchPostEffect']
@@ -877,10 +896,24 @@ declare module 'vue' {
     readonly useCssVars: UnwrapRef<typeof import('../../node_modules/vue')['useCssVars']>
     readonly useError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/error')['useError']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/fetch')['useFetch']>
+    readonly useField: UnwrapRef<typeof import('../../node_modules/vee-validate')['useField']>
+    readonly useFieldArray: UnwrapRef<typeof import('../../node_modules/vee-validate')['useFieldArray']>
+    readonly useFieldError: UnwrapRef<typeof import('../../node_modules/vee-validate')['useFieldError']>
+    readonly useFieldValue: UnwrapRef<typeof import('../../node_modules/vee-validate')['useFieldValue']>
+    readonly useForm: UnwrapRef<typeof import('../../node_modules/vee-validate')['useForm']>
+    readonly useFormErrors: UnwrapRef<typeof import('../../node_modules/vee-validate')['useFormErrors']>
+    readonly useFormValues: UnwrapRef<typeof import('../../node_modules/vee-validate')['useFormValues']>
     readonly useHead: UnwrapRef<typeof import('../../node_modules/@unhead/vue')['useHead']>
     readonly useHeadSafe: UnwrapRef<typeof import('../../node_modules/@unhead/vue')['useHeadSafe']>
     readonly useHydration: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/hydrate')['useHydration']>
     readonly useId: UnwrapRef<typeof import('../../node_modules/vue')['useId']>
+    readonly useIsFieldDirty: UnwrapRef<typeof import('../../node_modules/vee-validate')['useIsFieldDirty']>
+    readonly useIsFieldTouched: UnwrapRef<typeof import('../../node_modules/vee-validate')['useIsFieldTouched']>
+    readonly useIsFieldValid: UnwrapRef<typeof import('../../node_modules/vee-validate')['useIsFieldValid']>
+    readonly useIsFormDirty: UnwrapRef<typeof import('../../node_modules/vee-validate')['useIsFormDirty']>
+    readonly useIsFormTouched: UnwrapRef<typeof import('../../node_modules/vee-validate')['useIsFormTouched']>
+    readonly useIsFormValid: UnwrapRef<typeof import('../../node_modules/vee-validate')['useIsFormValid']>
+    readonly useIsSubmitting: UnwrapRef<typeof import('../../node_modules/vee-validate')['useIsSubmitting']>
     readonly useLazyAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useLazyAsyncData']>
     readonly useLazyFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/fetch')['useLazyFetch']>
     readonly useLink: UnwrapRef<typeof import('../../node_modules/vue-router')['useLink']>
@@ -895,6 +928,7 @@ declare module 'vue' {
     readonly useRequestHeader: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestHeader']>
     readonly useRequestHeaders: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['useRequestHeaders']>
     readonly useRequestURL: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/url')['useRequestURL']>
+    readonly useResetForm: UnwrapRef<typeof import('../../node_modules/vee-validate')['useResetForm']>
     readonly useRoute: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['useRoute']>
     readonly useRouteAnnouncer: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/route-announcer')['useRouteAnnouncer']>
     readonly useRouter: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['useRouter']>
@@ -930,8 +964,12 @@ declare module 'vue' {
     readonly useShadowRoot: UnwrapRef<typeof import('../../node_modules/vue')['useShadowRoot']>
     readonly useSlots: UnwrapRef<typeof import('../../node_modules/vue')['useSlots']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/state')['useState']>
+    readonly useSubmitCount: UnwrapRef<typeof import('../../node_modules/vee-validate')['useSubmitCount']>
+    readonly useSubmitForm: UnwrapRef<typeof import('../../node_modules/vee-validate')['useSubmitForm']>
     readonly useTemplateRef: UnwrapRef<typeof import('../../node_modules/vue')['useTemplateRef']>
     readonly useTransitionState: UnwrapRef<typeof import('../../node_modules/vue')['useTransitionState']>
+    readonly useValidateField: UnwrapRef<typeof import('../../node_modules/vee-validate')['useValidateField']>
+    readonly useValidateForm: UnwrapRef<typeof import('../../node_modules/vee-validate')['useValidateForm']>
     readonly watch: UnwrapRef<typeof import('../../node_modules/vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('../../node_modules/vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('../../node_modules/vue')['watchPostEffect']>

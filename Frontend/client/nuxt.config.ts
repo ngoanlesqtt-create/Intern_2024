@@ -10,7 +10,16 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@element-plus/nuxt"],
+  modules: ["@element-plus/nuxt", "@vee-validate/nuxt"],
+  veeValidate:{
+    autoImports: true,
+    componentNames: {
+      Form: 'VeeForm',
+      Field: 'VeeField',
+      FieldArray: 'VeeFieldArray',
+      ErrorMessage: 'VeeErrorMessage',
+    },
+  },
   plugins: [
     "~/plugins/pinia.js", // Đăng ký plugin Pinia
   ],
