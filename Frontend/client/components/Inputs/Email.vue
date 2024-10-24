@@ -1,27 +1,23 @@
 <template>
-  <Field
-    class="bg-[#ededed] w-1/2"
-    name="email"
-    type="email"
-    placeholder="Nhập email"
-    :rules="validateEmail"
-  />
-  <ErrorMessage class="text-red-500" name="email" />
+  <el-form-item
+    label="Email"
+    :error="v$.email.$error ? 'Email không hợp lệ' : ''"
+  >
+    <el-input
+      class="bg-[#ededed] w-1/2"
+      name="email"
+      type="email"
+      placeholder="Nhập email"
+      v-model="inputs.email"
+      @blur="v$.email.$touch()"
+    />
+  </el-form-item>
 </template>
 
 <script setup>
-import { Field, Form, ErrorMessage } from "vee-validate";
+import { ElInput } from "element-plus";
+import { useInputStore } from "~/stores/inputs";
 
-const validateEmail = (value) => {
-  if (!value) {
-    return "Bạn chưa nhập email";
-  }
-
-  const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  if (!regex.test(value)) {
-    return "Đây phải là một email hợp lệ";
-  }
-
-  return true;
-};
+const inputStore = useInputStore();
+const { inputs, v$ } = inputStore;
 </script>

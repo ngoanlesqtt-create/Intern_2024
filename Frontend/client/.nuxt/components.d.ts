@@ -4,7 +4,6 @@ type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refre
 interface _GlobalComponents {
       'Footer': typeof import("../components/Footer.vue")['default']
     'Header': typeof import("../components/Header.vue")['default']
-    'InputsAddress': typeof import("../components/Inputs/Address.vue")['default']
     'InputsEmail': typeof import("../components/Inputs/Email.vue")['default']
     'InputsPassword': typeof import("../components/Inputs/Password.vue")['default']
     'InputsPhoneNumber': typeof import("../components/Inputs/PhoneNumber.vue")['default']
@@ -442,7 +441,6 @@ interface _GlobalComponents {
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyFooter': typeof import("../components/Footer.vue")['default']
     'LazyHeader': typeof import("../components/Header.vue")['default']
-    'LazyInputsAddress': typeof import("../components/Inputs/Address.vue")['default']
     'LazyInputsEmail': typeof import("../components/Inputs/Email.vue")['default']
     'LazyInputsPassword': typeof import("../components/Inputs/Password.vue")['default']
     'LazyInputsPhoneNumber': typeof import("../components/Inputs/PhoneNumber.vue")['default']
@@ -886,7 +884,6 @@ declare module 'vue' {
 
 export const Footer: typeof import("../components/Footer.vue")['default']
 export const Header: typeof import("../components/Header.vue")['default']
-export const InputsAddress: typeof import("../components/Inputs/Address.vue")['default']
 export const InputsEmail: typeof import("../components/Inputs/Email.vue")['default']
 export const InputsPassword: typeof import("../components/Inputs/Password.vue")['default']
 export const InputsPhoneNumber: typeof import("../components/Inputs/PhoneNumber.vue")['default']
@@ -1324,7 +1321,6 @@ export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyFooter: typeof import("../components/Footer.vue")['default']
 export const LazyHeader: typeof import("../components/Header.vue")['default']
-export const LazyInputsAddress: typeof import("../components/Inputs/Address.vue")['default']
 export const LazyInputsEmail: typeof import("../components/Inputs/Email.vue")['default']
 export const LazyInputsPassword: typeof import("../components/Inputs/Password.vue")['default']
 export const LazyInputsPhoneNumber: typeof import("../components/Inputs/PhoneNumber.vue")['default']

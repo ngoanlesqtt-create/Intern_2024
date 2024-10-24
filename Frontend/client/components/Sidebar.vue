@@ -9,7 +9,7 @@
           :key="index"
           @click="changeCategory(item)"
         >
-          {{ item }}
+          {{ item.name }}
         </li>
       </ul>
     </div>
@@ -20,12 +20,23 @@
 </template>
 
 <script setup>
-import { useCategoryStore } from "~/stores/category";
 import { useCategoryDataStore } from "~/stores/categorydata";
 import { watch, ref, onMounted } from "vue";
+import axios from "axios";
 
-const { category } = useCategoryStore();
-const { fetchData, activeItem, data } = useCategoryDataStore();
+const category = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get(
+      "https://localhost:7029/san-pham/category"
+    );
+    category.value = response.data; 
+  } catch (error) {
+    console.error("Lỗi khi fetch dữ liệu:", error);
+  }
+});
+const { fetchData } = useCategoryDataStore();
 
 const changeCategory = async (item) => {
   await fetchData(item);

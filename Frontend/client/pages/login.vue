@@ -3,7 +3,7 @@
     <h1 class="font-bold text-3xl text-center">ĐĂNG NHẬP</h1>
     <Form
       @submit="onSubmit"
-      class="flex flex-col items-center h-[150px] justify-around w-1/2"
+      class="flex flex-col items-center h-[160px] justify-around w-1/2"
     >
       <Username />
       <Password />
@@ -18,17 +18,13 @@ import Username from "~/components/Inputs/Username";
 import Password from "~/components/Inputs/Password";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import { useInputStore } from "~/stores/inputs";
 
 const router = useRouter();
+const { v$ } = useInputStore();
 
 const onSubmit = async (values) => {
-  const respone = await axios.post("https://localhost:7029/login", {
-    username: values.username,
-    password: values.password,
-  });
-  console.log(respone);
-  localStorage.setItem("token", respone.data.token);
-  localStorage.setItem("refresh_token", respone.data.refreshToken);
+  v$.$touch();
   router.push("/");
 };
 </script>

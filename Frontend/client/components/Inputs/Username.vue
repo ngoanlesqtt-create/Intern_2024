@@ -1,27 +1,21 @@
 <template>
-  <Field
-    class="bg-[#ededed] w-1/2"
-    name="username"
-    type="text"
-    :rules="validateUsername"
-    placeholder="Nhập username"
-  />
-  <ErrorMessage class="text-red-500" name="username" />
+  <el-form-item
+    label="Tên người dùng"
+    :error="v$.username.$error ? 'Tên người dùng là bắt buộc' : ''"
+  >
+    <el-input
+      class="bg-[#ededed] w-1/2"
+      name="username"
+      type="text"
+      v-model="inputs.username"
+      placeholder="Nhập tên người dùng"
+      @blur="v$.username.$touch()"
+    />
+  </el-form-item>
 </template>
 
 <script setup>
-import { Field, Form, ErrorMessage } from "vee-validate";
+import { useInputStore } from "~/stores/inputs";
 
-const validateUsername = (value) => {
-  if (!value) {
-    return "Bạn chưa nhập username";
-  }
-
-  const regex = /^(?!.*[_.-]{2})[a-zA-Z0-9_-]{6,20}$/;
-  if (!regex.test(value)) {
-    return "Username phải có 6-20 ký tự long và chỉ chứa kí tự, số, dấu gạch dưới và dấu gạch nối.";
-  }
-
-  return true;
-};
+const { inputs, v$ } = useInputStore();
 </script>

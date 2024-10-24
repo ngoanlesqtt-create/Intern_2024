@@ -1,27 +1,21 @@
 <template>
-  <Field
-    class="bg-[#ededed] w-1/2"
-    name="password"
-    type="password"
-    placeholder="Nhập password"
-    :rules="validatePassword"
-  />
-  <ErrorMessage class="text-red-500" name="password" />
+  <el-form-item
+    label="Mật khẩu"
+    :error="v$.password.$error ? 'Mật khẩu là bắt buộc' : ''"
+  >
+    <el-input
+      class="bg-[#ededed] w-1/2"
+      name="password"
+      type="password"
+      placeholder="Nhập mật khẩu"
+      v-model="inputs.password"
+      @blur="v$.password.$touch()"
+    />
+  </el-form-item>
 </template>
 
 <script setup>
-import { Field, ErrorMessage } from "vee-validate";
+import { useInputStore } from "~/stores/inputs";
 
-const validatePassword = (value) => {
-  if (!value) {
-    return "Bạn chưa nhập password";
-  }
-
-  const regex = /^(?=.*[_.-])(?!.*[_.-]{2})[a-zA-Z0-9_.-]{6,20}$/;
-  if (!regex.test(value)) {
-    return "password phải có 6-20 ký tự và chỉ chứa kí tự, số, dấu gạch dưới và dấu gạch nối.";
-  }
-
-  return true;
-};
+const { inputs, v$ } = useInputStore();
 </script>

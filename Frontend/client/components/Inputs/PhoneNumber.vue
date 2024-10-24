@@ -1,27 +1,22 @@
 <template>
-  <Field
-    class="bg-[#ededed] w-1/2"
-    type="number"
-    placeholder="Nhập số điện thoại"
-    name="phoneNumber"
-    :rules="validatePhoneNumber"
-  />
-  <ErrorMessage class="text-red-500" name="phoneNumber" />
+  <el-form-item
+    label="Số điện thoại"
+    :error="v$.phoneNumber.$error ? 'Số điện thoại là bắt buộc' : ''"
+  >
+    <el-input
+      class="bg-[#ededed] w-1/2"
+      type="number"
+      placeholder="Nhập số điện thoại"
+      name="phoneNumber"
+      v-model="inputs.phoneNumber"
+      @blur="v$.phoneNumber.$touch()"
+    />
+  </el-form-item>
 </template>
 
 <script setup>
-import { Field, Form, ErrorMessage } from "vee-validate";
+import { useInputStore } from "~/stores/inputs";
 
-const validatePhoneNumber = (value) => {
-  if (!value) {
-    return "Bạn chưa nhập số điện thoại";
-  }
-
-  const regex = /^\d{10,}$/;
-  if (!regex.test(value)) {
-    return "Số điện thoại không hợp lệ";
-  }
-
-  return true;
-};
+// Khai báo store
+const { inputs, v$ } = useInputStore();
 </script>
