@@ -11,13 +11,14 @@ export default defineNuxtConfig({
   },
 
   modules: ["@element-plus/nuxt", "@vee-validate/nuxt"],
-  veeValidate:{
+
+  veeValidate: {
     autoImports: true,
     componentNames: {
-      Form: 'VeeForm',
-      Field: 'VeeField',
-      FieldArray: 'VeeFieldArray',
-      ErrorMessage: 'VeeErrorMessage',
+      Form: "VeeForm",
+      Field: "VeeField",
+      FieldArray: "VeeFieldArray",
+      ErrorMessage: "VeeErrorMessage",
     },
   },
   plugins: [
