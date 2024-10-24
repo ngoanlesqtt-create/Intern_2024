@@ -21,13 +21,17 @@ export default defineNuxtConfig({
       ErrorMessage: "VeeErrorMessage",
     },
   },
+
   plugins: [
     "~/plugins/pinia.js", // Đăng ký plugin Pinia
   ],
+
   app: {
     head: {
       title: "Project",
       meta: [{ name: "description", content: "everything about my project" }],
     },
   },
+
+  compatibilityDate: "2024-10-24",
 });

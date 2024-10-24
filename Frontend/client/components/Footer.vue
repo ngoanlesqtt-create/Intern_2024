@@ -1,5 +1,5 @@
 <template>
-  <div :class="style">
+  <div class="flex justify-evenly absolute bottom-0 h-[70px] bg-[#ececec] w-full">
     <img src="../assets/images/footer_logobct.webp" />
     <ul>
       <li>CÔNG TY CỔ PHẦN THƯƠNG MẠI DỊCH VỤ MÊ KÔNG COM</li>
