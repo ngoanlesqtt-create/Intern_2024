@@ -9,7 +9,7 @@
       <Password />
       <Email />
       <PhoneNumber />
-      <Address />
+      <!-- <Address /> -->
 
       <button>Đăng ký</button>
     </Form>
@@ -17,17 +17,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { Form } from "vee-validate";
 import Username from "~/components/Inputs/Username";
 import Password from "~/components/Inputs/Password";
 import Email from "~/components/Inputs/Email";
 import PhoneNumber from "~/components/Inputs/PhoneNumber";
 import Address from "~/components/Inputs/Address";
+import axios from "axios";
+import { useRouter } from 'vue-router';
 
 
+const router=useRouter();
 
-
+const onSubmit = async (values: any) => {
+  try {
+    const response = await axios.post("https://localhost:7029/register", {
+      username: values.username,
+      password: values.password,
+      email: values.email,
+      phoneNumber: values.phoneNumber,
+    });
+    alert(response.data);
+    router.push("/login")
+  } catch (e) {
+    console.log(e);
+  }
+};
 </script>
 
 <style scoped></style>
