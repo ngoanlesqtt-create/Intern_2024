@@ -20,25 +20,24 @@ export default defineNuxtRouteMiddleware(async () => {
     }
     try {
       const response = await axios.post(
-        "https://localhost:7029/refresh-token",{},
+        "https://localhost:7029/refresh-token",
+        {},
         {
-          headers: headers
+          headers: headers,
         }
       );
 
       if (response) {
         const data = await response.data;
-        console.log("new token:", data.AccessToken);
 
         // Nếu có access token mới, lưu vào localStorage
-        if (data.AccessToken) {
-          localStorage.setItem("token", data.AccessToken);
-        }
+        if (data.accessToken) localStorage.setItem("token", data.accessToken);
+        else localStorage.setItem("token", data.newAccessToken);
 
         return true; // Token hợp lệ hoặc đã làm mới
       }
     } catch (e) {
-      console.log(e);
+      console.log("Lỗi:", e);
       return false;
     }
     return false; // Token không hợp lệ
