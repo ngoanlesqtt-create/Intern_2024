@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { useInputStore } from "~/stores/inputs";
+import { useInputStore } from "~/stores/inputregister";
 
 // Khai báo store
 const { inputs, v$ } = useInputStore();

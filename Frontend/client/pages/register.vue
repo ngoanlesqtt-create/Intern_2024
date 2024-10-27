@@ -15,22 +15,41 @@
 </template>
 
 <script setup lang="ts">
-import Username from "~/components/Inputs/Username";
-import Password from "~/components/Inputs/Password";
-import Email from "~/components/Inputs/Email";
-import PhoneNumber from "~/components/Inputs/PhoneNumber";
+import Username from "~/components/inputs/inputregister/Username.vue";
+import Password from "~/components/inputs/inputregister/Password.vue";
+import Email from "~/components/inputs/inputregister/Email.vue";
+import PhoneNumber from "~/components/inputs/inputregister/PhoneNumber.vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { ElForm, ElButton } from "element-plus";
-import { useInputStore } from "~/stores/inputs";
+import { useInputStore } from "~/stores/inputregister";
 
 const router = useRouter();
-const { v$ } = useInputStore();
+const { inputs, v$ } = useInputStore();
 
 const onSubmit = async () => {
   v$.$touch();
-  if (v$.$invalid) console.log("Hello");
- 
+  const isValid = await v$.$validate();
+  if (isValid) {
+    const account = {
+      username: inputs.username,
+      password: inputs.password,
+      email: inputs.email,
+    };
+    try {
+      const response = await axios.post(
+        "https://localhost:7029/register",
+        account
+      );
+      const result = await response.data;
+      console.log(result);
+      router.push("/login");
+    } catch (e: any) {
+      if (typeof e.response.data.Password !== "undefined")
+        alert(e.response.data.Password);
+      else alert(e.response.data);
+    }
+  }
 };
 </script>
 

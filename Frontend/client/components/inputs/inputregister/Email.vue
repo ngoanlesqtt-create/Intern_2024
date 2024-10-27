@@ -16,7 +16,7 @@
 
 <script setup>
 import { ElInput } from "element-plus";
-import { useInputStore } from "~/stores/inputs";
+import { useInputStore } from "~/stores/inputregister";
 
 const inputStore = useInputStore();
 const { inputs, v$ } = inputStore;

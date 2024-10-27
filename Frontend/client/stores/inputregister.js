@@ -11,13 +11,18 @@ export const useInputStore = defineStore("inputStore", () => {
     phoneNumber: "",
   });
 
+  const resetInputs = () => {
+    inputs.username = "";
+    inputs.password = "";
+  };
   const rules = {
     username: { required },
     password: { required },
     email: { required, email },
     phoneNumber: { required },
   };
-  const v$ = useVuelidate(rules, inputs);
 
-  return { inputs, v$ };
+  let v$ = useVuelidate(rules, inputs);
+
+  return { inputs, v$, resetInputs };
 });

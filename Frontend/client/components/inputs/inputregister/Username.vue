@@ -9,13 +9,14 @@
       type="text"
       v-model="inputs.username"
       placeholder="Nhập tên người dùng"
+      @input="v$.username.$touch()"
       @blur="v$.username.$touch()"
     />
   </el-form-item>
 </template>
 
 <script setup>
-import { useInputStore } from "~/stores/inputs";
+import { useInputStore } from "~/stores/inputregister";
 
 const { inputs, v$ } = useInputStore();
 </script>

@@ -9,13 +9,14 @@
       type="password"
       placeholder="Nhập mật khẩu"
       v-model="inputs.password"
+      @input="v$.password.$touch()"
       @blur="v$.password.$touch()"
     />
   </el-form-item>
 </template>
 
 <script setup>
-import { useInputStore } from "~/stores/inputs";
+import {useInputLoginStore} from '~/stores/inputlogin'
 
-const { inputs, v$ } = useInputStore();
+const { inputs, v$ } = useInputLoginStore();
 </script>

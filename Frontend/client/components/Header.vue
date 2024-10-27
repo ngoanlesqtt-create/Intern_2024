@@ -11,7 +11,7 @@
       <ul class="flex w-1/3 justify-evenly">
         <li
           class="hover:cursor-pointer"
-          v-for="(item, index) in data"
+          v-for="(item, index) in authStore.getVisibleMenuItems()"
           :key="index"
           @click="navigateTo(item.path)"
         >
@@ -33,14 +33,44 @@
 </template>
 
 <script setup>
-import { ElButton, ElInput } from "element-plus";
 import { useRouter } from "vue-router";
-
+import { isAuthenticated } from "@/composables/useAuth";
 const router = useRouter();
 const { data } = useFetch("/api/menu");
-const navigateTo = (path) => {
-  router.push(path);
+import { useInputLoginStore } from "~/stores/inputlogin";
+import { useAuthStore } from "@/stores/auth";
+import axios from "axios";
+
+const authStore = useAuthStore();
+const inputLoginStore = useInputLoginStore();
+
+const { inputs } = inputLoginStore;
+
+const navigateTo = async (path) => {
+  if (path === "/logout") {
+    const userName = {
+      userName: inputs.username, 
+    };
+    try {
+      const response = await axios.post(
+        "https://localhost:7029/logout",
+        userName,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      authStore.logout()
+      router.push("/login")
+    } catch (error) {
+      console.error(
+        "Lỗi:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  } else {
+    router.push(path);
+  }
 };
 </script>
-
-<style lang="scss" scoped></style>

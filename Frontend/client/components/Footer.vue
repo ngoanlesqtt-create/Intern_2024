@@ -1,5 +1,7 @@
 <template>
-  <div class="flex justify-evenly absolute bottom-0 h-[70px] bg-[#ececec] w-full">
+  <div
+    class="flex justify-evenly absolute bottom-0 h-[70px] bg-[#ececec] w-full"
+  >
     <img src="../assets/images/footer_logobct.webp" />
     <ul>
       <li>CÔNG TY CỔ PHẦN THƯƠNG MẠI DỊCH VỤ MÊ KÔNG COM</li>
@@ -13,26 +15,7 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
-import { watch } from "vue";
-const route = useRoute();
-const style = ref(
-  "flex justify-evenly absolute bottom-0 h-[70px] bg-[#ececec] w-full"
-);
 
-watch(
-  () => route.query,
-  (newValue) => {
-    if (newValue.category == undefined) {
-      console.log("dung roi");
-      style.value = "flex justify-evenly h-[70px] bg-[#ececec]";
-    } else {
-      style.value =
-      "flex justify-evenly absolute bottom-0 h-[70px] bg-[#ececec] w-full";
-      console.log("sai roi");
-    }
-  }
-);
 </script>
 
 <style lang="scss" scoped></style>

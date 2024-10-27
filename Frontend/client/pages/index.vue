@@ -3,22 +3,26 @@
     <div v-if="products.length === 0" class="text-center text-gray-500">
       Loading...
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+    >
       <div
-      v-for="product in products"
-      :key="product.id"
-      class="border border-gray-300 rounded-lg p-4 shadow hover:shadow-lg transition-shadow"
+        v-for="product in products"
+        :key="product.id"
+        class="border border-gray-300 rounded-lg p-4 shadow hover:shadow-lg transition-shadow"
       >
-      <img
-      :src="product.thumbnails[0]"
-      alt="Hình ảnh sản phẩm"
-      class="w-full h-auto mb-2 rounded"
-      />
-      <strong class="text-lg block mb-1">{{ product.name }}</strong>
-      <span class="text-gray-700 text-center">Giá: {{ product.price }} VNĐ</span>
+        <img
+          :src="product.thumbnails[0]"
+          alt="Hình ảnh sản phẩm"
+          class="w-full h-auto mb-2 rounded"
+        />
+        <strong class="text-lg block mb-1">{{ product.name }}</strong>
+        <span class="text-gray-700 text-center"
+          >Giá: {{ product.price }} VNĐ</span
+        >
+      </div>
     </div>
   </div>
-</div>
 </template>
 <!-- <ul>
   <li v-for="(item, index) in localData" :key="index">
@@ -58,6 +62,10 @@ watch(
     localData.value = newValue;
   }
 );
+
+definePageMeta({
+  middleware: ["auth"],
+});
 
 useHead({
   title: "Trang chủ",

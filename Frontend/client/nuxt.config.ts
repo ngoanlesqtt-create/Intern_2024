@@ -11,7 +11,6 @@ export default defineNuxtConfig({
   },
 
   modules: ["@element-plus/nuxt", "@vee-validate/nuxt"],
-
   veeValidate: {
     autoImports: true,
     componentNames: {

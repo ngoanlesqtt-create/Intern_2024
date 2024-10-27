@@ -13,5 +13,6 @@ export default defineEventHandler(() => {
       path: "/cart",
     },
   ];
+
   return index;
 });
