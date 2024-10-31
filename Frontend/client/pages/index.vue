@@ -37,7 +37,6 @@ import axios from "axios";
 
 const store = useCategoryDataStore();
 const localData = ref([]);
-const page = ref(1);
 const products = ref([]);
 
 onMounted(async () => {
@@ -48,13 +47,6 @@ onMounted(async () => {
     console.error("Lỗi khi fetch dữ liệu:", error);
   }
 });
-
-watch(
-  () => products.value,
-  (newValue) => {
-    console.log(newValue[0].thumbnails[0]);
-  }
-);
 
 watch(
   () => store.data,

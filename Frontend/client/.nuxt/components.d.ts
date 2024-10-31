@@ -2,11 +2,11 @@
 import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
-      'Footer': typeof import("../components/Footer.vue")['default']
-    'Header': typeof import("../components/Header.vue")['default']
-    'Sidebar': typeof import("../components/Sidebar.vue")['default']
-    'AdminHeader': typeof import("../components/admin/Header.vue")['default']
+      'AdminHeader': typeof import("../components/admin/Header.vue")['default']
     'AdminSidebar': typeof import("../components/admin/Sidebar.vue")['default']
+    'ClientFooter': typeof import("../components/client/Footer.vue")['default']
+    'ClientHeader': typeof import("../components/client/Header.vue")['default']
+    'ClientSidebar': typeof import("../components/client/Sidebar.vue")['default']
     'InputsInputloginPassword': typeof import("../components/inputs/inputlogin/Password.vue")['default']
     'InputsInputloginUsername': typeof import("../components/inputs/inputlogin/Username.vue")['default']
     'InputsInputregisterEmail': typeof import("../components/inputs/inputregister/Email.vue")['default']
@@ -443,11 +443,11 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyFooter': typeof import("../components/Footer.vue")['default']
-    'LazyHeader': typeof import("../components/Header.vue")['default']
-    'LazySidebar': typeof import("../components/Sidebar.vue")['default']
-    'LazyAdminHeader': typeof import("../components/admin/Header.vue")['default']
+      'LazyAdminHeader': typeof import("../components/admin/Header.vue")['default']
     'LazyAdminSidebar': typeof import("../components/admin/Sidebar.vue")['default']
+    'LazyClientFooter': typeof import("../components/client/Footer.vue")['default']
+    'LazyClientHeader': typeof import("../components/client/Header.vue")['default']
+    'LazyClientSidebar': typeof import("../components/client/Sidebar.vue")['default']
     'LazyInputsInputloginPassword': typeof import("../components/inputs/inputlogin/Password.vue")['default']
     'LazyInputsInputloginUsername': typeof import("../components/inputs/inputlogin/Username.vue")['default']
     'LazyInputsInputregisterEmail': typeof import("../components/inputs/inputregister/Email.vue")['default']
@@ -890,11 +890,11 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
-export const Footer: typeof import("../components/Footer.vue")['default']
-export const Header: typeof import("../components/Header.vue")['default']
-export const Sidebar: typeof import("../components/Sidebar.vue")['default']
 export const AdminHeader: typeof import("../components/admin/Header.vue")['default']
 export const AdminSidebar: typeof import("../components/admin/Sidebar.vue")['default']
+export const ClientFooter: typeof import("../components/client/Footer.vue")['default']
+export const ClientHeader: typeof import("../components/client/Header.vue")['default']
+export const ClientSidebar: typeof import("../components/client/Sidebar.vue")['default']
 export const InputsInputloginPassword: typeof import("../components/inputs/inputlogin/Password.vue")['default']
 export const InputsInputloginUsername: typeof import("../components/inputs/inputlogin/Username.vue")['default']
 export const InputsInputregisterEmail: typeof import("../components/inputs/inputregister/Email.vue")['default']
@@ -1331,11 +1331,11 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-export const LazyFooter: typeof import("../components/Footer.vue")['default']
-export const LazyHeader: typeof import("../components/Header.vue")['default']
-export const LazySidebar: typeof import("../components/Sidebar.vue")['default']
 export const LazyAdminHeader: typeof import("../components/admin/Header.vue")['default']
 export const LazyAdminSidebar: typeof import("../components/admin/Sidebar.vue")['default']
+export const LazyClientFooter: typeof import("../components/client/Footer.vue")['default']
+export const LazyClientHeader: typeof import("../components/client/Header.vue")['default']
+export const LazyClientSidebar: typeof import("../components/client/Sidebar.vue")['default']
 export const LazyInputsInputloginPassword: typeof import("../components/inputs/inputlogin/Password.vue")['default']
 export const LazyInputsInputloginUsername: typeof import("../components/inputs/inputlogin/Username.vue")['default']
 export const LazyInputsInputregisterEmail: typeof import("../components/inputs/inputregister/Email.vue")['default']

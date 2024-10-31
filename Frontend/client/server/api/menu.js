@@ -1,16 +1,24 @@
 export default defineEventHandler(() => {
   const index = [
     {
-      label: "Đăng nhập",
-      path: "/login",
+      label: "User",
+      id: 1,
+      path: "/user",
     },
     {
-      label: "Đăng ký",
-      path: "/register",
+      label: "Book",
+      id: 2,
+      path: "/book",
     },
     {
-      label: "Giỏ hàng",
-      path: "/cart",
+      label: "Category",
+      id: 3,
+      path: "/categories",
+    },
+    {
+      label: "Publisher",
+      id: 4,
+      path: "/publisher",
     },
   ];
 

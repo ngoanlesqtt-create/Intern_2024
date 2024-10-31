@@ -1044,16 +1044,24 @@ const errorDev = /*#__PURE__*/Object.freeze({
 const menu = defineEventHandler(() => {
   const index = [
     {
-      label: "\u0110\u0103ng nh\u1EADp",
-      path: "/login"
+      label: "User",
+      id: 1,
+      path: "/user"
     },
     {
-      label: "\u0110\u0103ng k\xFD",
-      path: "/register"
+      label: "Book",
+      id: 2,
+      path: "/book"
     },
     {
-      label: "Gi\u1ECF h\xE0ng",
-      path: "/cart"
+      label: "Category",
+      id: 3,
+      path: "/categories"
+    },
+    {
+      label: "Publisher",
+      id: 4,
+      path: "/publisher"
     }
   ];
   return index;

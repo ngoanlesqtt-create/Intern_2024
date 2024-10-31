@@ -11,9 +11,9 @@
   </div>
 </template>
 <script setup>
-import Header from "~/components/Header.vue";
-import Sidebar from "~/components/Sidebar.vue";
-import Footer from "~/components/Footer.vue";
+import Header from "~/components/client/Header.vue";
+import Sidebar from "~/components/client/Sidebar.vue";
+import Footer from "~/components/client/Footer.vue";
 </script>
 
 <style lang="scss" scoped></style>
